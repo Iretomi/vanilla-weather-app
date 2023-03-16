@@ -10,6 +10,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Vanilla app</title>
   </head>
@@ -17,8 +18,9 @@
     <div class="container">
       <div class="weather-frame">
         <div class="positioning">
-          <h1>Warsaw Mazowieckie,Poland</h1>
-          <h2>Mostly sunny. Thu 16, 11:20</h2>
+          <h1 id="City">Warsaw Mazowieckie,Poland</h1>
+          <h2 id="Description">Mostly sunny. Thu 16, 11:20</h2>
+          <h3>Thursday 23:44</h3>
         </div>
         <div class="row">
           <div class="col-6">
@@ -27,15 +29,15 @@
                 src="https://assets.msn.com/weathermapdata/1/static/weather/Icons/taskbar_v3/Condition_Card/MostlyCloudyDayV2.svg"
                 alt="cloudy"
               />
-              <span class="degree"> <strong>5° </strong></span
+              <strong class="degree" id="Temp"> <span>5° </span></strong
               ><span class="units">C ❘ °F</span>
             </div>
           </div>
           <div class="col-6">
             <ul>
               <li>Precipitation: 0%</li>
-              <li>wind: 13KMPH</li>
-              <li>Humidity: 58%</li>
+              <li>wind: <span id="Wind"> 13</span><span> KMPH</span></li>
+              <li>Humidity: <span id="humidity">58</span><span>%</span></li>
             </ul>
           </div>
         </div>
