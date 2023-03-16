@@ -16,14 +16,20 @@
   <body>
     <div class="container">
       <div class="weather-frame">
-        <h1>Warsaw Mazowieckie,Poland</h1>
-        <h2>Mostly sunny. Thu 16, 11:20</h2>
+        <div class="positioning">
+          <h1>Warsaw Mazowieckie,Poland</h1>
+          <h2>Mostly sunny. Thu 16, 11:20</h2>
+        </div>
         <div class="row">
           <div class="col-6">
-            <img
-              src="https://assets.msn.com/weathermapdata/1/static/weather/Icons/taskbar_v3/Condition_Card/MostlyCloudyDayV2.svg"
-              alt="cloudy"
-            />5°C ❘ °F
+            <div class="weather-image">
+              <img
+                src="https://assets.msn.com/weathermapdata/1/static/weather/Icons/taskbar_v3/Condition_Card/MostlyCloudyDayV2.svg"
+                alt="cloudy"
+              />
+              <span class="degree"> <strong>5° </strong></span
+              ><span class="units">C ❘ °F</span>
+            </div>
           </div>
           <div class="col-6">
             <ul>
@@ -32,17 +38,16 @@
               <li>Humidity: 58%</li>
             </ul>
           </div>
-
-          <footer>
-            <a
-              href="https://github.com/Iretomi/vanilla-weather-app"
-              target="_blank"
-            >
-              Open-source code by </a
-            >Azeezah Aina
-          </footer>
         </div>
       </div>
+      <footer class="link">
+        <a
+          href="https://github.com/Iretomi/vanilla-weather-app"
+          target="_blank"
+        >
+          Open-source code by </a
+        >Azeezah Aina
+      </footer>
     </div>
     <script src="src/app.js"></script>
   </body>
