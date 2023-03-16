@@ -52,8 +52,8 @@ li {
   margin-bottom: 20px;
 }
 .weather-image {
-  margin: 10px;
-  line-height: 10px;
+  margin: 0px;
+  line-height: 0px;
   padding: 0px;
 }
 .degree {
