@@ -72,3 +72,14 @@ li {
   top: -20px;
   margin-right: 10px 5px;
 }
+.btn-btn-primary {
+  color: #faf4f4;
+  background-color: #2b1653;
+  text-decoration: wavy;
+  border: 1px solid #dadddd;
+  border-radius: 10px;
+}
+.btn-btn-primary:hover {
+  background-color: #aa8be2;
+  transition: ease-in-out;
+}
