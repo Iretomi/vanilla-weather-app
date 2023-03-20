@@ -83,3 +83,14 @@ li {
   background-color: #aa8be2;
   transition: ease-in-out;
 }
+.forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+.forecast-day1 {
+  color: #e6e3e3;
+}
+
+.forecast-date1 {
+  color: #e6e3e3;
+}
