@@ -86,11 +86,16 @@ li {
 .forecast {
   margin-top: 20px;
   text-align: center;
+  color: #e6e3e3;
 }
 .forecast-day1 {
-  color: #e6e3e3;
+  font-size: 15px;
 }
 
 .forecast-date1 {
-  color: #e6e3e3;
+  font-size: 15px;
+}
+
+.low1 {
+  opacity: 0.5;
 }

@@ -19,6 +19,32 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayWeatherForecast() {
+  let weatherForecastElement = document.querySelector("#weather-forecast");
+  let weatherForecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thur", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    weatherForecastHTML =
+      weatherForecastHTML +
+      `
+              <div class="col-2">
+                <div class="forecast-day1">${day}</div>
+                <img
+                  src="https://assets.msn.com/weathermapdata/1/static/weather/Icons/taskbar_v3/Condition_Card/MostlyCloudyNightV2.svg"
+                  alt="day1"
+                  width="30"
+                />
+                <div class="forecast-date1">
+                  <span class="low1">18</span><span class="large1">-20</span>
+                </div>
+              </div>
+        `;
+  });
+  weatherForecastHTML = weatherForecastHTML + `</div>`;
+
+  weatherForecastElement.innerHTML = weatherForecastHTML;
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#Temp");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -52,3 +78,5 @@ function result(event) {
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", result);
+
+displayWeatherForecast();
