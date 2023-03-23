@@ -45,6 +45,15 @@ function displayWeatherForecast() {
   weatherForecastElement.innerHTML = weatherForecastHTML;
 }
 
+function getWeatherForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "b7006d8faf9ee2ct6bdd5214o1a3d9fb";
+  let query = "lisbon";
+  let apiUrl2 = `https://api.shecodes.io/weather/v1/forecast?query=${query}&key=${apiKey}&units=metric`;
+  console.log(apiUrl2);
+  axios.get(apiUrl2).then(displayWeatherForecast);
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#Temp");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -63,6 +72,8 @@ function displayTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getWeatherForecast(response.data.coord);
 }
 
 function search(city) {
