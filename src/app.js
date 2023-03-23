@@ -19,7 +19,7 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayWeatherForecast() {
+function displayWeatherForecast(response) {
   let weatherForecastElement = document.querySelector("#weather-forecast");
   let weatherForecastHTML = `<div class="row">`;
   let days = ["Wed", "Thur", "Fri", "Sat", "Sun", "Mon"];
@@ -49,9 +49,9 @@ function getWeatherForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "b7006d8faf9ee2ct6bdd5214o1a3d9fb";
   let query = "lisbon";
-  let apiUrl2 = `https://api.shecodes.io/weather/v1/forecast?query=${query}&key=${apiKey}&units=metric`;
-  console.log(apiUrl2);
-  axios.get(apiUrl2).then(displayWeatherForecast);
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${query}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayWeatherForecast);
 }
 
 function displayTemperature(response) {
@@ -89,5 +89,4 @@ function result(event) {
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", result);
-
 displayWeatherForecast();
