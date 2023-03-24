@@ -18,28 +18,44 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thur"];
+
+  return days[day];
+}
 
 function displayWeatherForecast(response) {
-  console.log(response.data.daily);
+  let weatherForecast = response.data.daily;
   let weatherForecastElement = document.querySelector("#weather-forecast");
   let weatherForecastHTML = `<div class="row">`;
-  let days = ["Wed", "Thur", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (day) {
-    weatherForecastHTML =
-      weatherForecastHTML +
-      `
+
+  weatherForecast.forEach(function (weatherForecastDay, index) {
+    if (index < 6) {
+      weatherForecastHTML =
+        weatherForecastHTML +
+        `
               <div class="col-2">
-                <div class="forecast-day1">${day}</div>
-                <img
+                <div class="forecast-day1">${formatDay(
+                  weatherForecastDay.temperature.day
+                )}</div>
+             <img
                   src="https://assets.msn.com/weathermapdata/1/static/weather/Icons/taskbar_v3/Condition_Card/MostlyCloudyNightV2.svg"
                   alt="day1"
                   width="30"
                 />
+      
                 <div class="forecast-date1">
-                  <span class="low1">18</span><span class="large1">-20</span>
+                  <span class="low1">${Math.round(
+                    weatherForecastDay.temperature.minimum
+                  )}</span><span class="large1">-${Math.round(
+          weatherForecastDay.temperature.maximum
+        )}</span>
                 </div>
               </div>
         `;
+    }
   });
   weatherForecastHTML = weatherForecastHTML + `</div>`;
 
