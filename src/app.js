@@ -41,7 +41,9 @@ function displayWeatherForecast(response) {
                   weatherForecastDay.temperature.day
                 )}</div>
              <img
-                  src="https://assets.msn.com/weathermapdata/1/static/weather/Icons/taskbar_v3/Condition_Card/MostlyCloudyNightV2.svg"
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                    weatherForecastDay.condition.icon
+                  }.png"
                   alt="day1"
                   width="30"
                 />
