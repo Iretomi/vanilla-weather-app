@@ -21,7 +21,7 @@ function formatDate(timestamp) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thur"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri"];
 
   return days[day];
 }
