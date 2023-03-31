@@ -13,7 +13,6 @@ function formatDate(timestamp) {
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
@@ -21,7 +20,7 @@ function formatDate(timestamp) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
 
   return days[day];
 }
@@ -38,7 +37,7 @@ function displayWeatherForecast(response) {
         `
               <div class="col-2">
                 <div class="forecast-day1">${formatDay(
-                  weatherForecastDay.temperature.day
+                  weatherForecastDay.time
                 )}</div>
              <img
                   src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
@@ -106,3 +105,4 @@ function result(event) {
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", result);
+search("paris");
